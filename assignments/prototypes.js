@@ -17,10 +17,12 @@
 function GameObjects(attributes) {
   this.createdAt = attributes.createdAt;
   this.dimensions = attributes.dimensions;
-  this.destroy = function() {
-    return `${this.name} was removed from the game.`;
-  };
+  this.destroy = function () {
+    return `${this.name} was removed from the game`;
+  } 
 }
+
+
 
 /*
   === CharacterStats ===
@@ -33,11 +35,11 @@ function CharacterStats(charAttributes) {
   GameObjects.call(this, charAttributes);
   this.healthPoints = charAttributes.healthPoints;
   this.name = charAttributes.name;
-  this.damage = function() {
-    return `${this.name} took damage.`;
-  }
+  this.takeDamage = function () {
+    return `${this.name} took damage`;
+  } 
 }
-
+   
 
 /*
   === Humanoid (Having an appearance or character resembling that of a human.) ===
