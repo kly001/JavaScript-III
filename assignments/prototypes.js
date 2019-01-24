@@ -18,7 +18,7 @@ function GameObjects(attributes) {
   this.createdAt = attributes.createdAt;
   this.dimensions = attributes.dimensions;
   this.destroy = function() {
-    return `Object was removed from the game.`;
+    return `${this.name} was removed from the game.`;
   };
 }
 
@@ -33,7 +33,9 @@ function CharacterStats(charAttributes) {
   GameObjects.call(this, charAttributes);
   this.healthPoints = charAttributes.healthPoints;
   this.name = charAttributes.name;
-
+  this.damage = function() {
+    return `${this.name} took damage.`;
+  }
 }
 
 
@@ -52,7 +54,9 @@ function Humanoid(humanAttributes) {
   this.team = humanAttributes.team;
   this.weapons = humanAttributes.weapons;
   this.language = humanAttributes.language;
-
+  this.greet = function() {
+    return `${this.name} offers a greeting in ${this.language}`;
+  }; 
 }
 /*
   * Inheritance chain: GameObject -> CharacterStats -> Humanoid
