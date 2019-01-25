@@ -57,4 +57,20 @@ meat.declare();
 // Principle 4
 
 // code example for Explicit Binding
+function Month(time) {
+    this.name = time.name;
+    this.season = time.season;
+    this.declare = function() {
+        console.log(`The month of ${this.name} occurs in ${this.season}`);
+    }
+    }
+const jan = new Month ({name: "January", season: "winter"});
+const july = new Month ({name: "July", season: "summer"});
+
+jan.declare.apply(july);
+july.declare.call(jan);
+
+jan.declare()
+july.declare()
+
 
